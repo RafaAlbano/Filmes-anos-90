@@ -61,14 +61,16 @@ export default {
   </div>
 </template>
 <style scoped>
+@import url("http://fonts.cdnfonts.com/css/dubiel");
 .central {
   text-decoration: none;
   padding-right: 47%;
 }
 .central h1 {
   color: rgb(255, 0, 0);
-  font-family: sans-serif;
   text-decoration: none;
   font-size: 3em;
+  font-family: "Dubiel", sans-serif;
+  font-family: "DubielPlain", sans-serif;
 }
 </style>

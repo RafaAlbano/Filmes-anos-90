@@ -24,18 +24,36 @@ export default {
 </script>
 <template>
   <CarroselComp />
-  <div class="filmes" v-for="result of results" :key="result.id">
-    <p>{{ result.title }} - {{ result.id }}</p>
-    <img :src="getImgUrl(result.poster_path)" alt="" />
+  <div class="filmes">
+    <div class="filme-info" v-for="result of results" :key="result.id">
+      <p class="filem-title">{{ result.title }} - {{ result.id }}</p>
+      <span class="filme-img">
+        <img :src="getImgUrl(result.poster_path)" alt="" width="200"/>
+      </span>
+    </div>
   </div>
 </template>
 <style>
 .filmes {
-  display: inline-block;
-  /* max-width: 350px;
-  max-height: 500px;
-  width: auto;
-  height: auto;
-  margin: 2% 3%; */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filme-info{
+  width: 200px;
+  margin: 0 8.5px;
+  display: grid;
+  grid-template-rows: 15% auto;
+  grid-template-areas:
+    'filme-title'
+    'filme-img';
+}
+
+.filme-title {
+  grid-area: 'filme-title';
+}
+
+.filme-img {
+  grid-area: 'filme-img';
 }
 </style>
