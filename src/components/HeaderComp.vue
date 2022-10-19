@@ -57,7 +57,7 @@ export default {
     </nav>
   </div>
   <div class="central">
-    <h1>Netflix</h1>
+    <h1>HRFilmes</h1>
   </div>
 </template>
 <style scoped>
@@ -69,8 +69,9 @@ export default {
 .central h1 {
   color: rgb(255, 0, 0);
   text-decoration: none;
-  font-size: 3em;
+  font-size: 3.5em;
   font-family: "Dubiel", sans-serif;
   font-family: "DubielPlain", sans-serif;
+  text-align: center;
 }
 </style>

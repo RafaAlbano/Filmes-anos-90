@@ -12,15 +12,13 @@ a {
   font-family: 'Dubiel', sans-serif;
   font-family: 'DubielPlain', sans-serif;
 }
-p {
-  color: rgba(255, 255, 255, 0.884);
-}
 h1 {
   color: rgb(255, 0, 0);
   padding-left: 3%;
   margin-top: 1%;
   font-size: 2.3em;
 }
-li {
-  font-family: Arial, Helvetica, sans-serif;
+.router-link-active{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 0.9em;
 }
