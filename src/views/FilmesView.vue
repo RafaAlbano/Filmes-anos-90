@@ -1,11 +1,9 @@
 <script>
-// import CarroselComp from "@/components/CarroselComp.vue";
 import { mapStores, mapState, mapActions } from "pinia";
 import { useGenreStore } from "@/stores/genres";
 import { useMoviesStore } from "@/stores/movies";
 import MoviesComp from "@/components/MoviesComp.vue";
 export default {
-  // components: { CarroselComp },
   components: { MoviesComp },
   async created() {
     await this.get_genres();
@@ -31,7 +29,6 @@ export default {
 };
 </script>
 <template>
-  <!-- <CarroselComp /> -->
   <h2>Filmes</h2>
   <div class="filmes">
     <div class="filme-info" v-for="genre of genres" :key="genre.id">
@@ -45,47 +42,20 @@ export default {
   </div>
 </template>
 <style>
-@import url("http://fonts.cdnfonts.com/css/dubiel");
-
-/* .filmes { */
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* flex-wrap: wrap; */
-/* } */
-
-/* .filme-info { */
-  /* width: 200px; */
-  /* margin: 8px 8px 8px 8px; */
-  /* display: grid; */
-  /* grid-template-rows: 15% auto; */
-  /* grid-template-areas: */
-    /* "filme-title" */
-    /* "filme-img"; */
-/* } */
-
-/* .filme-title { */
-  /* grid-area: "filme-title"; */
-/* } */
-
-/* .filme-img { */
-  /* grid-area: "filme-img"; */
-/* } */
-/* p { */
-  /* color: rgba(248, 241, 241, 0.863); */
-  /* font-family: Arial, Helvetica, sans-serif; */
-  /* font-size: 0.9em; */
-/* } */
-/* h2 { */
-  /* color: rgb(255, 0, 0); */
-  /* padding-left: 2%; */
-  /* margin-top: 1%; */
-  /* font-family: "Dubiel", sans-serif; */
-  /* font-family: "DubielPlain", sans-serif; */
-/* } */
-.filme-info{
-display:flex;
-overflow-y: auto;
-height: auto;
-width: 50%;
+.filme-info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.filme-info.flex.scroller {
+  width: 100%;
+  max-width: var(--maxPrimaryPageWidth);
+  min-height: 355px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  transition: height 0.5s linear;
 }
 </style>
