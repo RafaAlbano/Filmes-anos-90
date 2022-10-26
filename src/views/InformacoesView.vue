@@ -1,6 +1,6 @@
 <script>
-import GenresAPI from "@/api/genres";
-const genreApi = new GenresAPI();
+import MoviesAPI from "@/api/movies";
+const movieApi = new MoviesAPI();
 export default {
   props: ["id"],
   data() {
@@ -9,7 +9,7 @@ export default {
     };
   },
   async created() {
-    this.filme = await genreApi.buscarGenrePorId(this.id);
+    this.filme = await movieApi.buscarMoviePorId(this.id);
   },
   methods: {
     getImgUrl(poster_path) {
@@ -29,35 +29,36 @@ export default {
 </script>
 <template>
   <main>
-    <h1 class="nome">{{ genre.title }}</h1>
-    <div class="genre_desc">
+    {{ filme }}
+    <!-- <h1 class="nome">{{ movie.title }}</h1>
+    <div class="movie_desc">
       <img
-        :key="genre.id"
-        :src="getImgUrl(genre.poster_path)"
+        :key="movie.id"
+        :src="getImgUrl(movie.poster_path)"
         alt=""
-        class="filme_img"
+        class="movie_img"
       />
       <form>
         <div class="desc">
           <h3 class="nome3">
             Gênero :
-            <span class="genre" v-for="genre of genre.genres" :key="genre.id">{{
+            <span class="movie" v-for="genre of movie.genres" :key="genre.id">{{
               genre.name
             }}</span>
           </h3>
           <h3 class="nome3">
-            Data de lançamento: {{ formataData(genre.release_date) }}
+            Data de lançamento: {{ formataData(movie.release_date) }}
           </h3>
           <h3 class="nome3">
-            Avaliação: {{ parseFloat(genre.vote_average).toFixed(1) }}
+            Avaliação: {{ parseFloat(movie.vote_average).toFixed(1) }}
           </h3>
           <h3 class="nome3">
-            Duração do filme: {{ formataDuracao(genre.runtime) }}
+            Duração do filme: {{ formataDuracao(movie.runtime) }}
           </h3>
         </div>
-        <h3 class="nome4 sinopse">Sinopse: {{ genre.overview }}</h3>
-        <h3 class="nome4 tagline">"{{ genre.tagline }}"</h3>
+        <h3 class="nome4 sinopse">Sinopse: {{ movie.overview }}</h3>
+        <h3 class="nome4 tagline">"{{ movie.tagline }}"</h3>
       </form>
-    </div>
+    </div> -->
   </main>
 </template>

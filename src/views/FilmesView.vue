@@ -37,25 +37,16 @@ export default {
         <img :src="getImgUrl(genre.poster_path)" alt="" width="200" />
       </span> -->
       <h1 :id="genre.id">{{ genre.name }} - {{ genre.id }}</h1>
-      <MoviesComp :genre="genre.id" quantidade="5" />
+      <MoviesComp :genre="genre.id" />
+      <!-- fzr o click -->
     </div>
   </div>
 </template>
 <style>
 .filme-info {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  align-content: flex-start;
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
-.filme-info.flex.scroller {
-  width: 100%;
-  max-width: var(--maxPrimaryPageWidth);
-  min-height: 355px;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  transition: height 0.5s linear;
+.filme-img {
+  grid-area: "filme-img";
 }
 </style>
