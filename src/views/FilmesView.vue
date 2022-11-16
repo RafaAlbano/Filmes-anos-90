@@ -36,8 +36,10 @@ export default {
       <!-- <span class="filme-img">
         <img :src="getImgUrl(genre.poster_path)" alt="" width="200" />
       </span> -->
-      <h1 :id="genre.id">{{ genre.name }} - {{ genre.id }}</h1>
-      <router-link to="/info/:id"><MoviesComp :genre="genre.id" /></router-link>
+      <h1>{{ genre.name }} - {{ genre.id }}</h1>
+      <!-- <router-link :to="`/info/${genre.id}`"> -->
+        <MoviesComp :genre="genre.id" />
+      <!-- </router-link> -->
     </div>
   </div>
 </template>

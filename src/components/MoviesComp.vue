@@ -20,7 +20,9 @@ export default {
 <template>
   <div class="row">
     <p v-for="movie of moviesByGenreId(genre).results" :key="movie.id">
-      <img :src="getImgUrl(movie.poster_path)" alt=":D" class="poster" />
+      <router-link :to="`/info/${movie.id}`">
+        <img :src="getImgUrl(movie.poster_path)" alt=":D" class="poster" />
+      </router-link>
     </p>
   </div>
 </template>

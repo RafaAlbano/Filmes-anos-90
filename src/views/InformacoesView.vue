@@ -8,7 +8,7 @@ export default {
       filme: {},
     };
   },
-  async created() {
+  async mounted() {
     this.filme = await movieApi.buscarMoviePorId(this.id);
   },
   methods: {
@@ -29,16 +29,17 @@ export default {
 </script>
 <template>
   <main>
+    {{ id }}
     {{ filme }}
-    <!-- <h1 class="nome">{{ movie.title }}</h1>
+    <h1 class="nome">{{ filme.title }}</h1>
     <div class="movie_desc">
       <img
-        :key="movie.id"
-        :src="getImgUrl(movie.poster_path)"
+        :src="getImgUrl(filme.poster_path)"
         alt=""
         class="movie_img"
       />
-      <form>
+      {{ filme.overview}}
+      <!-- <form>
         <div class="desc">
           <h3 class="nome3">
             Gênero :
@@ -58,8 +59,7 @@ export default {
         </div>
         <h3 class="nome4 sinopse">Sinopse: {{ movie.overview }}</h3>
         <h3 class="nome4 tagline">"{{ movie.tagline }}"</h3>
-      </form>
-    </div> -->
+      </form> -->
+    </div>
   </main>
 </template>
-<!-- fzr funcionar -->
