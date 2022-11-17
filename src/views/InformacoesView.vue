@@ -29,37 +29,12 @@ export default {
 </script>
 <template>
   <main>
-    {{ id }}
-    {{ filme }}
     <h1 class="nome">{{ filme.title }}</h1>
     <div class="movie_desc">
-      <img
-        :src="getImgUrl(filme.poster_path)"
-        alt=""
-        class="movie_img"
-      />
-      {{ filme.overview}}
-      <!-- <form>
-        <div class="desc">
-          <h3 class="nome3">
-            Gênero :
-            <span class="movie" v-for="genre of movie.genres" :key="genre.id">{{
-              genre.name
-            }}</span>
-          </h3>
-          <h3 class="nome3">
-            Data de lançamento: {{ formataData(movie.release_date) }}
-          </h3>
-          <h3 class="nome3">
-            Avaliação: {{ parseFloat(movie.vote_average).toFixed(1) }}
-          </h3>
-          <h3 class="nome3">
-            Duração do filme: {{ formataDuracao(movie.runtime) }}
-          </h3>
-        </div>
-        <h3 class="nome4 sinopse">Sinopse: {{ movie.overview }}</h3>
-        <h3 class="nome4 tagline">"{{ movie.tagline }}"</h3>
-      </form> -->
+      <img :src="getImgUrl(filme.poster_path)" alt="" class="movie_img" />
+      {{ filme.vote_average }}
+      {{ filme.overview }}
+      {{ filme.runtime }}
     </div>
   </main>
 </template>

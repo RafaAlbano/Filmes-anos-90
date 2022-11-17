@@ -38,9 +38,46 @@ export default {
       </span> -->
       <h1>{{ genre.name }} - {{ genre.id }}</h1>
       <!-- <router-link :to="`/info/${genre.id}`"> -->
+      <div class="lista-filmes">
         <MoviesComp :genre="genre.id" />
+      </div>
       <!-- </router-link> -->
     </div>
   </div>
 </template>
-<style></style>
+<style scoped>
+.lista-filmes {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  /* scrollbar-gutter: stable; */
+}
+
+.lista-filmes::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+.lista-filmes::-webkit-scrollbar-thumb {
+  background-color: rgb(123, 120, 120);
+  border-radius: 20px;
+}
+
+.lista-filmes:after {
+  transition: linear 0.3s;
+  opacity: 1;
+  content: "";
+  width: 60px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    #fff 100%
+  );
+  will-change: opacity;
+  pointer-events: none;
+}
+</style>

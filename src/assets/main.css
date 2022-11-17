@@ -12,13 +12,30 @@ a {
   font-family: 'Dubiel', sans-serif;
   font-family: 'DubielPlain', sans-serif;
 }
+
 h1 {
   color: rgb(255, 0, 0);
   padding-left: 3%;
   margin-top: 1%;
   font-size: 2.3em;
 }
-.router-link-active{
+
+.router-link-active {
   font-family: 'Times New Roman', Times, serif;
   font-size: 0.9em;
+}
+
+.filme-info {
+  /* width: 100%; */
+  /* height: 500px; */
+  /* margin: 5% 3%; */
+  /* display: flex; */
+}
+
+.filmes {
+  display: flex;
+  /* height: 98%; */
+  /* width: auto; */
+  /* overflow-x: auto; */
+  flex-direction: column;
 }
