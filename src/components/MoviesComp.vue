@@ -3,9 +3,7 @@ import { mapStores, mapActions } from "pinia";
 import { useMoviesStore } from "@/stores/movies";
 export default {
   props: ["genre"],
-  async created() {
-    // await this.getMoviesByGenre(this.genre);
-  },
+  async created() {},
   computed: {
     ...mapStores(useMoviesStore),
   },
@@ -18,12 +16,19 @@ export default {
 };
 </script>
 <template>
-  <!-- <div class="row"> -->
-  <p v-for="movie of moviesByGenreId(genre).results" :key="movie.id">
+  <p
+    v-for="movie of moviesByGenreId(genre).results"
+    :key="movie.id"
+    class="img"
+  >
     <router-link :to="`/info/${movie.id}`">
       <img :src="getImgUrl(movie.poster_path)" alt=":D" class="poster" />
     </router-link>
   </p>
-  <!-- </div> -->
 </template>
-<style></style>
+<style>
+.img,
+.poster {
+  margin: 10px;
+}
+</style>

@@ -29,19 +29,12 @@ export default {
 };
 </script>
 <template>
-  <h2>Filmes</h2>
   <div class="filmes">
     <div class="filme-info" v-for="genre of genres" :key="genre.id">
-      <!-- <p class="filem-title">{{ result.title }} - {{ result.id }}</p> -->
-      <!-- <span class="filme-img">
-        <img :src="getImgUrl(genre.poster_path)" alt="" width="200" />
-      </span> -->
-      <h1>{{ genre.name }} - {{ genre.id }}</h1>
-      <!-- <router-link :to="`/info/${genre.id}`"> -->
+      <h1>{{ genre.name }}</h1>
       <div class="lista-filmes">
         <MoviesComp :genre="genre.id" />
       </div>
-      <!-- </router-link> -->
     </div>
   </div>
 </template>
@@ -51,7 +44,6 @@ export default {
   flex-direction: row;
   overflow-x: scroll;
   overflow-y: hidden;
-  /* scrollbar-gutter: stable; */
 }
 
 .lista-filmes::-webkit-scrollbar {
@@ -68,14 +60,14 @@ export default {
   opacity: 1;
   content: "";
   width: 60px;
-  height: 100%;
+  height: 1733vh;
   position: absolute;
   top: 0;
   right: 0;
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0) 0%,
-    #fff 100%
+    #fff 1000%
   );
   will-change: opacity;
   pointer-events: none;
