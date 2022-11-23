@@ -52,7 +52,8 @@ export default {
 }
 .lista-filmes::-webkit-scrollbar-thumb {
   background-color: rgb(123, 120, 120);
-  border-radius: 20px;
+  border-radius: 30px;
+  width: 200px;
 }
 
 .lista-filmes:after {

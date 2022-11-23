@@ -45,9 +45,7 @@ export default {
               </a>
               <ul class="dropdown-menu dropdown-menu-dark">
                 <li v-for="genre of genres" :key="genre.id">
-                  <a :href="`#${genre.id}`"
-                    >{{ genre.name }} - {{ genre.id }}</a
-                  >
+                  <a :href="`#${genre.id}`">{{ genre.name }}</a>
                 </li>
               </ul>
             </li>
