@@ -35,24 +35,32 @@ export default {
     <div class="direita">
       <h1 class="nome">{{ filme.title }}</h1>
       <h3>Avaliação:</h3>
-      {{ filme.vote_average }}
+      <p class="avaliacao">{{ filme.vote_average }}</p>
+      <h3>Data de Publicação:</h3>
+      <p class="pub">{{ filme.release_date }}</p>
       <h3>Sinopse:</h3>
-      {{ filme.overview }}
+      <p class="sinopse">{{ filme.overview }}</p>
       <h3>Duração:</h3>
-      {{ filme.runtime }}
+      <p class="duracao">{{ filme.runtime }} minutos.</p>
     </div>
+    <!-- {{ filme }} -->
   </main>
 </template>
 <style scoped>
+.sinopse {
+  text-align: justify;
+}
 .img,
 .movie_img {
-  margin-top: 4.5em;
-  margin-left: 20%;
+  margin-top: 3.8em;
+  margin-left: 40%;
   text-align: center;
+  margin-bottom: 5.5%;
 }
 .nome {
   color: white;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
 }
 main {
   display: flex;
@@ -61,10 +69,18 @@ main {
 .direita {
   margin-top: 3em;
   margin-left: 200px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  color: rgb(218, 214, 214);
   margin-right: 20%;
+  margin-bottom: 2.5%;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: rgb(141, 140, 140);
   background-color: rgb(19, 19, 19);
   padding-left: 3em;
+  padding-right: 3em;
+  border-radius: 0.5em;
+  width: 900px;
+}
+h3 {
+  font-family: "Times New Roman", Times, serif;
+  color: white;
 }
 </style>

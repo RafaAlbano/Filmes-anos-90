@@ -30,7 +30,12 @@ export default {
 </script>
 <template>
   <div class="filmes">
-    <div class="filme-info" v-for="genre of genres" :key="genre.id">
+    <div
+      class="filme-info"
+      v-for="genre of genres"
+      :key="genre.id"
+      :id="genre.id"
+    >
       <h1>{{ genre.name }}</h1>
       <div class="lista-filmes">
         <MoviesComp :genre="genre.id" />
@@ -67,8 +72,8 @@ export default {
   right: 0;
   background-image: linear-gradient(
     to right,
-    rgba(255, 255, 255, 0) 0%,
-    #fff 1000%
+    rgba(231, 225, 225, 0) 0%,
+    rgb(5, 5, 5) 1000%
   );
   will-change: opacity;
   pointer-events: none;
